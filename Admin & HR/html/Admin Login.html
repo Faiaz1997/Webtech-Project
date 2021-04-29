@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Admin LogIn</title>
+   
+</head>
+<body style="background: lightblue">
+    <center>
+
+        <h1>Admin</h1>
+
+    <form id="myForm" method="post" action="../php/loginCheck.php"> 
+        <div class="message"><?php if($message!="") { echo $message; } ?></div>
+        <fieldset>
+            
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="name" name="username" id="username"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button name="submit" id="submit">login</button>
+                        <a href="../../Bankdashboard.php"> Dashboard</a>
+     
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+<div id="ack"></div>
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script type="text/javascript" src="../js/login.js"></script>
+ 
+</body>
+</html>

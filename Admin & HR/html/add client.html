@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Client</title>
+</head>
+<body style="background: lightblue ">
+
+    <center>
+        <h1>ADD CLIENT</h1>
+
+        <form id= "add" method="post" action="../php/addCheck.php"> 
+        <fieldset>
+
+        <table>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input id="name" type="text" name="name"></td>
+            </tr>
+            <br>
+
+            <tr>
+                <td><label>Email</label></td>
+                <td><input id="email" type="text" name="email"></td>
+            </tr>
+            <br>
+
+            <tr>
+                <td><label>Phone Number</label></td>
+                <td><input id="phn" type="text" name="phonenumber"></td>
+            </tr>
+            <br>
+
+            <tr>
+                <td><label>Address</label></td>
+                <td><input id="ads" type="text" name="ads" ></td>
+            </tr>
+            <br>
+            <tr>
+            <td></td>
+                    <td>
+                       
+                        <button id="submit">ADD</button>
+                        
+                    </td>
+            </tr>
+
+
+            
+        </table>
+    </fieldset>
+</form>
+
+<div id="ack"></div>
+
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/addclient.js"></script>
+
+           
+ 
+</body>
+</html>

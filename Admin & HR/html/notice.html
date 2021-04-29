@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="background: lightblue">
+	<h1  align="center">Notice</h1>
+
+    <table align="center">
+    	<tr>
+            <td>
+                <form method="POST" action="noticeshow.php" onsubmit="return Validation()">
+                    <fieldset>                                             
+                        <table align="center" >
+                            <tr>
+                                <td>
+                                    Subject: <br><br>
+                                    <input type="text" name="subject" id="subject"><br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Details: <br><br>
+                                    <textarea name="details" id="details" cols="90" rows="25"></textarea><br><br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="submit">Post Notice</button>
+                                </td>
+                            </tr>
+    
+                        </table>
+                    </fieldset>
+                </form>
+            </td>
+    	</tr>
+    </table>
+    
+
+</body>
+</html>

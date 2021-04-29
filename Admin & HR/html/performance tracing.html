@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background: lightblue ">
+
+<form method="POST" action="performance.php" >
+          <fieldset>
+            <legend align="center">Performance Stuff</legend>
+            <table align="center">
+              <tr>
+                <td>Stuff Name:</td>
+                <td><input type="text" name="name"  id="name"></td>
+              </tr>
+              <tr>
+                <td>Rating:</td>
+                <td>
+                <select name="rate" id="rate">
+                    <option>Select an option</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </td>
+              </tr> 
+              <tr> 
+                <td>Date:</td>
+                <td>
+                  <input type="date" name="date"  id="date">
+                </td>
+                  
+              </tr>
+              
+              <tr>
+                <td colspan="2" align="right">
+                  <input type="submit" name="submit" value="Submit">
+                  <input type="reset" name="reset" value="Reset">
+                </td>
+              </tr>
+            </table>
+            
+          </fieldset>
+      
+        </form>
+
+</body>
+</html>
