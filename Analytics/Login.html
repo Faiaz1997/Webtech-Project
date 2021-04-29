@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+
+	<form method="POST" action="Login.php" onsubmit="return Validation()"> 
+		<fieldset>
+			<legend>Login</legend>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" id="name"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" id="password"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="submit" value="Submit">
+						<a href="../Bankdashboard.php"> Dashboard</a>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<script>
+		function Validation()
+		{
+			let errorflag =false;
+	
+			const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+			if(name == "" || password == "")
+			{
+				alert('Null Submission');
+				errorflag=true;
+			}
+			if(errorflag==false)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
