@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	
+	<table align="center">
+		<tr>
+			<td>
+				<form method="POST" action="clientreg.php" onsubmit="return Validation()" >
+					<fieldset>
+						<legend align="center">Registration</legend>
+						<table>
+							<tr>
+								<td>Name:</td>
+								<td><input type="text" name="name"  id="name"></td>
+							</tr>
+							<tr>
+								<td>Email:</td>
+								<td><input type="text" name="email"  id="email"></td>
+							</tr>
+							<tr>
+								<td>Address:</td>
+								<td><input type="text" name="address"  id="address"></td>
+							</tr>
+							<tr>
+								<td>Phone:</td>
+								<td><input type="text" name="phone" id="phone"></td>
+							</tr>
+							<tr>
+								<td>Deposit:</td>
+								<td><input type="text" name="deposit" id="deposit"></td>
+							</tr>
+							
+							<tr>
+								<td>Gender:</td>
+								<td>
+									<select name="gender" id="gender">
+										<option value=""></option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+										<option value="Other">Other</option>
+								</td>
+								
+							</tr>
+							<tr> 
+								<td>Date of Birth:</td>
+								<td>
+									<input type="date" name="dob"  id="dob">
+								</td>
+									
+							</tr>
+							<tr>
+								<td>Password:</td>
+								<td><input type="password" name="password" id="password"></td>
+							</tr>
+							<tr>
+								<td>Confirm Password:</td>
+								<td><input type="password" name="confirmpassword"  id="confirmpassword"></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="right">
+									<input type="submit" name="submit" value="Submit">
+									<input type="reset" name="reset" value="Reset">
+									<a href="clientlogin.html"> Log In</a>
+								</td>
+							</tr>
+						</table>
+						
+					</fieldset>
+			
+				</form>
+
+			</td>
+		</tr>
+	</table> 
+	<script>
+		function Validation()
+		{
+			const name = document.getElementById('name').value;
+			const email = document.getElementById('email').value;
+			const address = document.getElementById('address').value;
+			const phone = document.getElementById('phone').value;
+			const password = document.getElementById('password').value;
+			const confirmpassword = document.getElementById('confirmpassword').value;
+			const gender = document.getElementById('gender').value;
+			const dob= document.getElementById('dob').value;
+			const deposit = document.getElementById('deposit').value;
+
+			let errorflag =false;
+			let i=0;
+
+			if(name == '' || email == '' || address == '' || phone == '' || password == '' || confirmpassword  == '' 
+			|| gender == "" || dob == '' || deposit == '')
+			{
+				alert('Null Submission');
+				errorflag=true;
+			}
+			else
+			{
+				let mailflag=false;
+		
+				for(i=0;i<email.length;i++)
+				{
+					if((email[i] == '@' ))
+					{
+						mailflag=true;
+					}
+				}
+				if(mailflag == false)
+				{
+					alert('Invalid email Format');
+					errorflag=true;
+				}
+
+				let phoneflag=false;
+		
+				for(i=0;i<phone.length;i++)
+				{
+					if((phone[i] >= 0 ) && (phone[i] <= 9 ))
+					{
+							phoneflag=true;				         
+					}
+				}
+				if(phoneflag == false)
+				{
+					alert('Invalid phone number Format');
+					errorflag=true;
+				}
+
+				if((phone.length <7) || (phone.length >11))
+					{
+						alert ('Invalid Phone Number');
+						errorflag=true;
+					}
+
+				let depositflag=false;
+		
+				for(i=0;i<deposit.length;i++)
+				{
+					if((deposit[i] >= 0 ) && (deposit[i] <= 9 ))
+					{
+							depositflag=true;				         
+					}
+				}
+				if(depositflag == false)
+				{
+					alert('Invalid deposit ammount');
+					errorflag=true;
+				}
+
+
+				let passflag=false;
+
+				for(i=0;i<password.length;i++)
+				{
+					if((password[i] == '@' || 
+					password[i] == '$' ||
+					password[i] == '#' ||
+					password[i] == '%')) 
+					{
+						passflag=true;
+					}
+				}
+		
+				if(passflag == false)
+				{
+					alert ('Password must contain atleast one of the special characters (@, $, % or #!)');
+					errorflag=true;
+				}
+				if(password.length < 4)
+				{
+					alert ('Password must contain atleast 4 characters');
+					errorflag=true;
+				}
+		
+				if(password != confirmpassword )
+				{
+					alert ("Confirmed password does't match with password");
+					errorflag=true;
+				}
+				if(deposit<= 0)
+				{
+					alert ("Invalid deposit ammount");
+					errorflag=true;
+				}
+			}
+			if(errorflag==false)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
+	</script>
+</body>
+</html>

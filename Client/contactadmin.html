@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Contact Us
+        </title>
+        <style>
+            .c1{
+                background-color: #D1EAF7;
+                color:#009DEB;
+                padding: 10px 10px 10px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center" width="100%" height="80px" border="1">
+            <tr class="c1">
+            <td align="center" width="25%"><a href="clienthome.php">Home</a> </td>
+                <td align="center" width="25%"><a href="clientapplyloan.html">Loan</a> </td>
+                <td align="center" width="25%">Business Analytics</td>
+                <td align="center" width="25%"><a href="contactadmin.html">Contact Us</a></td>    
+            </tr>
+        </table>
+        <table border="1" width="100%">
+            <tr>
+                <td width="20%" class="c1">
+                <table height="600px">
+                    <tr><td><b>Accounts</b></td></tr>
+                    <tr><td><a href="clientaccountsummary.php">Accounts Summary</a> </td></tr>
+                    <tr><td><a href="clienttransactionhistory.php">Transaction History</a> </td></tr>
+                    <tr><td><b>Fund Transfer</b></td></tr>
+                    <tr><td><a href="clientfundwithdraw.html">Withdraw</a> </td></tr>
+                    <tr><td><a href="clientfundtransfer.html">Transfer</a></td></tr>
+                    <tr><td><b>Requests</b></td></tr>
+                    <tr><td><a href="clientcard.php">Atm Card</a></td></tr>
+                    <tr><td><b>Profile</b></td></tr>
+                    <tr><td><a href="clientdetails.php">Personal Details</a> </td></tr>
+                    <tr><td><a href="clientpasschange.html">Change Password</a></td></tr>
+                    <tr><td><a href="clientlogout.php">Log Out</a></td></tr>  
+                </table>
+                </td>
+                <td width="80%">
+                    <table align="center" >
+                        <tr><td align="center"><br><br><b>Contact Information</b><br><br></td></tr>
+                        <tr>
+                            <td align="center">
+                                1.Branch: Dhaka<br>
+                                Phone: +880123 456 7890<br>
+                                Email: dhakabranch@email.com<br><br>
+                                2.Branch: Chittagong<br>
+                                Phone: +880123 456 7891<br>
+                                Email: Chittagongbranch@email.com<br><br>
+                                3.Branch: Rajshahi<br>
+                                Phone: +880123 456 7892<br>
+                                Email: Rajshahibranch@email.com<br><br>
+                                4.Branch: Sylhet<br>
+                                Phone: +880123 456 7892<br>
+                                Email: Sylhetbranch@email.com<br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <form method="POST" action="contactadmin.php" onsubmit="return Validation()">
+                                    <fieldset >
+                                        <legend>Contact Us</legend>
+                                        <table align="center" >
+                                            <tr>
+                                                <td>
+                                                    Name: <br><br>
+                                                    <input type="text" name="name" id="name"><br><br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Account No: <br><br>
+                                                    <input type="text" name="clientaccountno" id="clientaccountno"><br><br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Contact with: <br><br>
+                                                    <select name="contact" id="contact">
+                                                        <option value=""></option>
+                                                        <option value="Manager">Manager</option>
+                                                        <option value="Card Manager">Card Manager</option>
+                                                        <option value="Loan Manager">Loan Manager</option>
+                                                    </select> <br><br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Message: <br><br>
+                                                    <textarea name="text" id="text" cols="90" rows="10"></textarea><br><br>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="submit" name="submit" value="Submit">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <script>
+            function Validation()
+            {
+                const name = document.getElementById('name').value;
+                const clientaccountno = document.getElementById('clientaccountno').value;
+                const contact= document.getElementById('contact').value;
+                const text= document.getElementById('text').value;
+            
+                let errorflag=false;
+                let i=0;
+
+                if(name == '' || clientaccountno == '' || contact== '' || text  == '')
+                {
+                    alert('Null Submission');
+                    errorflag=true;
+                }
+                else
+                {
+                    let clientaccflag=false;
+                    
+                    for(i=0; i<=clientaccountno.length; i++)
+                    {
+                        if(clientaccountno[i]  >= 0  && clientaccountno[i]  <= 9 )
+                        {
+                                clientaccflag=true;			         
+                        }
+                    }
+                    if(clientaccflag == false)
+                    {
+                        alert ('Invalid Account Number Format');
+                        errorflag=true;
+                    }  
+                }
+                if(errorflag==false)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

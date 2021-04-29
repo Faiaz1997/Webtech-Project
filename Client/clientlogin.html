@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+  <style>
+            .c1{
+                background-color: #D1EAF7;
+                color:#009DEB;
+                padding: 10px 10px 10px 10px;
+            }
+        </style>
+<body>
+
+	<form method="POST" action="clientlogin.php" onsubmit="return Validation()"> 
+		<fieldset class="c1">
+			<legend><h3>Client Login</h3></legend>
+			<table align="center">
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" id="name"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" id="password"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="submit" value="Submit">
+						<a href="../Bankdashboard.php"> Dashboard</a>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+	<script>
+		function Validation()
+		{
+			let errorflag =false;
+	
+			const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+			if(name == "" || password == "")
+			{
+				alert('Null Submission');
+				errorflag=true;
+			}
+			if(errorflag==false)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
